@@ -1,0 +1,54 @@
+{% extends 'layout/base.html' %} {% block title %} <title>{{title}}</title> {% endblock %} {% block content %}
+<main class="index container position-relative">
+  <div class="row position-absolute top-50 start-50 translate-middle">
+    <div class="card px-3 pt-3 pb-4">
+      <h4 class="text-center">Calculator</h4>
+      <form action="" method="post">
+        <div class="d-flex justify-content-center">
+          <div class="layar p-3 bg-dark mb-3 rounded-3">
+            <div class="row mb-2 d-flex justify-content-center">
+              <input type="text" class="sub-layar1 bg-dark text-white text-end rounded-3" id="history" value="{{data}}" disabled />
+            </div>
+            <div class="row d-flex justify-content-center">
+              {% if result == '= ' %}
+              <input type="text" class="sub-layar2 bg-dark text-white text-end rounded-3" id="result" value="" disabled />
+              {% else %}
+              <input type="text" class="sub-layar2 bg-dark text-white text-end rounded-3" id="result" value="{{result}}" disabled />
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-evenly mb-2">
+          <input class="btn btn-danger ac" type="button" id="clear-all" value="AC" onclick="kosongAll()" />
+          <input class="btn btn-danger" type="button" id="clear" value="C" onclick="kosong()" />
+          <input type="button" class="btn btn-dark" value="/" onclick="display('/')" />
+        </div>
+        <div class="row d-flex justify-content-evenly mb-2">
+          <input type="button" class="btn btn-dark" value="7" onclick="display('7')" />
+          <input type="button" class="btn btn-dark" value="8" onclick="display('8')" />
+          <input type="button" class="btn btn-dark" value="9" onclick="display('9')" />
+          <input type="button" class="btn btn-dark" value="x" onclick="display('*')" />
+        </div>
+        <div class="row d-flex justify-content-evenly mb-2">
+          <input type="button" class="btn btn-dark" value="4" onclick="display('4')" />
+          <input type="button" class="btn btn-dark" value="5" onclick="display('5')" />
+          <input type="button" class="btn btn-dark" value="6" onclick="display('6')" />
+          <input type="button" class="btn btn-dark" value="-" onclick="display('-')" />
+        </div>
+        <div class="row d-flex justify-content-evenly mb-2">
+          <input type="button" class="btn btn-dark" value="1" onclick="display('1')" />
+          <input type="button" class="btn btn-dark" value="2" onclick="display('2')" />
+          <input type="button" class="btn btn-dark" value="3" onclick="display('3')" />
+          <input type="button" class="btn btn-dark" value="+" onclick="display('+')" />
+        </div>
+        <div class="row d-flex justify-content-evenly">
+          <input type="button" class="btn btn-dark zero" value="0" onclick="display('0')" />
+          <input type="button" class="btn btn-dark" value="." onclick="display('.')" />
+          <input type="hidden" id="data" value="" name="data" />
+          <input class="btn btn-dark" type="submit" value="=" />
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

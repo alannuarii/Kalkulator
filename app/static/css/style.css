@@ -1,0 +1,39 @@
+body {
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+}
+.index {
+  width: 100%;
+  height: 100vh;
+}
+.card {
+  width: 450px;
+}
+input {
+  width: 70px !important;
+  height: 70px !important;
+}
+.zero,
+.ac {
+  width: 170px !important;
+  height: 70px !important;
+}
+.layar {
+  width: 90%;
+}
+.sub-layar1 {
+  width: 80% !important;
+  height: 50px !important;
+  font-size: 20px;
+  border: none;
+  border-radius: 0px !important;
+}
+.sub-layar2 {
+  width: 80% !important;
+  height: 80px !important;
+  font-size: 40px;
+  margin-top: -8px;
+  border: none;
+  border-radius: 0px !important;
+}
